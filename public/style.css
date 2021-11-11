@@ -1,0 +1,414 @@
+/* Project spaning styles */
+
+/* Main styles */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header {
+  background-color: #043a63;
+  color: white;
+}
+
+#logga {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+#logga > img {
+  width: 100px;
+  height: 100px;
+}
+
+nav {
+  background-color: #002447;
+
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  margin: 0px;
+  padding: 0px;
+}
+
+nav > img {
+  width: 40px;
+  filter: invert(100%);
+}
+
+footer {
+  background-color: #002447;
+  padding: 30px;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* Text styles */
+
+p {
+  font-family: "Libre Baskerville", serif;
+  font-size: 18px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Open Sans", sans-serif;
+}
+
+h3 {
+  font-size: 32px;
+  margin: 32px;
+}
+
+h4 {
+  margin: 0px;
+}
+
+h4 > a {
+  color: #ffffff;
+}
+
+h5 {
+  color: #ffffff;
+  font-size: 32px;
+  margin: 0px;
+  padding: 25px;
+  padding-left: 50px;
+}
+
+h6 {
+  color: #ffffff;
+  font-size: 18px;
+  margin: 0px;
+  padding: 10px;
+  padding-left: 100px;
+}
+
+/* Main page specific styles */
+
+#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  background-image: url(img/main-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  height: 800px;
+  color: #ffffff;
+}
+
+#main-page h1 {
+  font-size: 128px;
+}
+
+#main-page h2 {
+  font-size: 56px;
+  padding: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: 0px;
+}
+
+#main-page button {
+  border-radius: 20px;
+  border-width: 5px;
+  border-color: #002447;
+  background-color: #043a63;
+
+  color: #ffffff;
+}
+
+#main-page article {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#main-page article p {
+  width: 40%;
+}
+
+#organisationInfo {
+  flex-direction: row;
+}
+
+#troupeInfo {
+  flex-direction: row-reverse;
+}
+
+/* Sign in specific styles */
+
+.sign-in-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.sign-in-form {
+  width: 40%;
+}
+
+.sign-in-form input {
+  font-size: 18px;
+}
+
+.sign-in-field {
+  display: flex;
+  align-items: center;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+#remember-me {
+  display: flex;
+  align-items: center;
+}
+
+/* Signed in scout specific styles */
+
+#scout-main {
+  display: flex;
+  justify-content: space-around;
+}
+
+.calender {
+  width: 40%;
+}
+
+.calender-entry {
+  margin: 10px;
+}
+
+.calender-entry-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #cee3f0;
+  width: 100%;
+}
+
+.calender-entry-button > img {
+  width: 40px;
+  height: auto;
+}
+
+.calender-entry-button h2 {
+  margin: 0px;
+  padding: 10px;
+}
+
+.calender-entry-text {
+  display: flex;
+}
+
+.calender-entry-block {
+  background-color: #cee3f0;
+  padding: 20px;
+
+  display: flex;
+}
+
+.calender-entry-block h2 {
+  margin: 0px;
+}
+
+.calender-entry-block p {
+  margin: 0px;
+  padding: 10px;
+}
+
+.calender-ideas {
+  width: 50%;
+}
+
+.calender-extra {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.badge {
+  width: 40%;
+}
+
+.badge-container {
+  display: flex;
+}
+
+.badge-entry {
+  width: 50%;
+  height: 80px;
+
+  background-color: #cee3f0;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.badge-entry h2 {
+  margin: 0px;
+}
+
+.badge-entry p {
+  font-size: 12px;
+}
+
+/* Ledare signed in */
+
+#ledare-main {
+  display: flex;
+  justify-content: space-around;
+}
+
+.attendance {
+  width: 40%;
+}
+
+.attendance-entry {
+  margin: 10px;
+}
+
+.attendance-entry-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #cee3f0;
+  width: 100%;
+}
+
+.attendance-entry-button > img {
+  width: 40px;
+  height: auto;
+}
+
+.attendance-entry-button h2 {
+  margin: 0px;
+  padding: 10px;
+}
+
+.attendance-entry-text {
+  display: flex;
+}
+
+.attendance-entry-block {
+  background-color: #cee3f0;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.attendance-entry-block h2 {
+  margin: 0px;
+}
+
+.attendance-entry-block-entry {
+  padding: 10px;
+  width: 50%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.attendance-entry-block-entry-marker {
+  width: 25px;
+  height: 25px;
+  background-color: red;
+}
+
+/* Contact styles */
+
+#contact-main {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info h2 {
+  margin-left: 20px;
+}
+
+.map img {
+  margin: 20px;
+}
+
+.unit {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.unit > * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.unit img {
+  height: 200px;
+}
+
+.unit h2 {
+  padding: 10px;
+}
+
+.unit p {
+  margin-left: 25px;
+  padding: 5px;
+}
+
+/* CSS classes */
+
+.hidden {
+  display: none;
+}
+
+.present {
+  background-color: green;
+}

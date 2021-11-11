@@ -1,54 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <script type="module" defer>
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js";
-        import {
-          getFirestore,
-          collection,
-          getDocs,
-          query,
-          where,
-          Timestamp,
-        } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-  
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-          apiKey: "AIzaSyBfOTYOtec4gU_4xy568g8oyg9g0l5QdTo",
-          authDomain: "scoutpage-36494.firebaseapp.com",
-          projectId: "scoutpage-36494",
-          storageBucket: "scoutpage-36494.appspot.com",
-          messagingSenderId: "116409279827",
-          appId: "1:116409279827:web:382a1461197b0e7039eda6",
-        };
-  
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-  
-        const calendarRef = collection(db, "calendar");
-  
-        const q = query(
-          calendarRef,
-          where("unit", "==", "utmanare"),
-          where("name", "==", "intresseklubben")
-        );
-        const querySnapshot = await getDocs(q);
-        querySnapshot.forEach((doc) => {
-          // doc.data() is never undefined for query doc snapshots
-          console.log(doc.id, " => ", doc.data());
-        });
-      </script>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lidingö-Breviks Sjöscoutkår</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Open+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="img/Scoutsymbolen_rgb.png" />
+    <script type="module" src="mainPage.js" defer></script>
+    <script type="module" src="footer.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img src="img/menu.png" alt="Menu" />
+        <a href="sign-in.html"><h4>Logga in</h4></a>
+      </nav>
+      <a href="index.html">
+        <div id="logga">
+          <img src="img/scoutlilja-144-morkbla.png" alt="Scout Lilja" />
+          <h3>Lidingö-Breviks Sjöscoutkår</h3>
+        </div>
+      </a>
+    </header>
+    <main>
+      <div id="main-page">
+        <div id="main">
+          <h1>Välkommen till scouterna</h1>
+          <a href="contact.html">
+            <button>
+              <h2>Bli scout</h2>
+            </button>
+          </a>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <h5>Kontakt uppgifter</h5>
+    </footer>
+  </body>
 </html>
