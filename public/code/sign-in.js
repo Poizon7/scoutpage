@@ -4,10 +4,6 @@ import {
   getFirestore,
   doc,
   getDoc,
-  collection,
-  query,
-  where,
-  getDocs,
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
 import {
   getAuth,
@@ -31,14 +27,14 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-let passwordField = document.querySelector("#password");
-let usernameField = document.querySelector("#username");
-
 function login(e) {
   e.preventDefault();
 
-  let email = usernameField.value;
-  let password = passwordField.value;
+  const passwordField = document.querySelector("#password");
+  const usernameField = document.querySelector("#username");
+
+  const email = usernameField.value;
+  const password = passwordField.value;
 
   const auth = getAuth();
   signInWithEmailAndPassword(auth, email, password)
@@ -71,13 +67,13 @@ onAuthStateChanged(auth, async (user) => {
 
     switch (data.type) {
       case "scout":
-        window.open("./public/scout.html", "_self");
+        window.open("./scout.html", "_self");
         break;
       case "ledare":
-        window.open("./public/ledare.html", "_self");
+        window.open("./ledare.html", "_self");
         break;
       case "vård":
-        window.open("./public/gardian.html", "_self");
+        window.open("./gardian.html", "_self");
         break;
       default:
         console.log(
@@ -86,6 +82,5 @@ onAuthStateChanged(auth, async (user) => {
     }
     // ...
   } else {
-    window.open("./public/index.html", "_self");
   }
 });
