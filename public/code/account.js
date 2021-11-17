@@ -4,6 +4,12 @@ import {
   getFirestore,
   doc,
   getDoc,
+  collection,
+  query,
+  where,
+  getDocs,
+  updateDoc,
+  addDoc,
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
 import {
   getAuth,
@@ -28,31 +34,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-function login(e) {
-  e.preventDefault();
-
-  const passwordField = document.querySelector("#password");
-  const usernameField = document.querySelector("#username");
-
-  const email = usernameField.value;
-  const password = passwordField.value;
-
-  const auth = getAuth();
-  signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
-      console.log("success");
-      // ...
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log("error");
-    });
-}
-
-document.querySelector("form").addEventListener("submit", login);
+const account = document.querySelector("#login");
 
 const auth = getAuth();
 onAuthStateChanged(auth, async (user) => {
@@ -61,9 +43,33 @@ onAuthStateChanged(auth, async (user) => {
     // https://firebase.google.com/docs/reference/js/firebase.User
     const uid = user.uid;
 
-    window.open("./scout.html", "_self");
+    const docRef = doc(db, "identification", user.email);
+
+    const docSnap = await getDoc(docRef);
+    const data = docSnap.data();
+
+    account.querySelector("h4").innerText = user.email;
+    account.querySelector("a").setAttribute("href", "scout.html");
+
+    const logOut = document.createElement("h4");
+    logOut.addEventListener("click", SignOut);
+    const logOutText = document.createTextNode("Logga ut");
+    logOut.appendChild(logOutText);
+    account.appendChild(logOut);
 
     // ...
   } else {
+    account.querySelector("h4").innerText = "Logga in";
+    account.querySelector("a").setAttribute("href", "sign-in.html");
   }
 });
+
+function SignOut() {
+  signOut(auth)
+    .then(() => {
+      // Sign-out successful.
+    })
+    .catch((error) => {
+      // An error happened.
+    });
+}
