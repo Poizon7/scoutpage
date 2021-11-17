@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="icon" type="image/x-icon" href="img/Scoutsymbolen_rgb.png" />
+    <script type="module" src="code/account.js" defer></script>
     <script type="module" src="code/mainPage.js" defer></script>
     <script type="module" src="code/footer.js" defer></script>
   </head>
@@ -18,7 +19,9 @@
     <header>
       <nav>
         <img src="img/menu.png" alt="Menu" />
-        <a href="sign-in.html"><h4>Logga in</h4></a>
+        <div id="login">
+          <a href="sign-in.html"><h4>Logga in</h4></a>
+        </div>
       </nav>
       <a href="index.html">
         <div id="logga">

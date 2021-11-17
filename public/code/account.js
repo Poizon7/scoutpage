@@ -53,6 +53,7 @@ onAuthStateChanged(auth, async (user) => {
 
     const logOut = document.createElement("h4");
     logOut.addEventListener("click", SignOut);
+    logOut.setAttribute("id", "logout");
     const logOutText = document.createTextNode("Logga ut");
     logOut.appendChild(logOutText);
     account.appendChild(logOut);
@@ -67,7 +68,8 @@ onAuthStateChanged(auth, async (user) => {
 function SignOut() {
   signOut(auth)
     .then(() => {
-      // Sign-out successful.
+      document.querySelector("#logout").remove();
+      window.open("./index.html", "_self");
     })
     .catch((error) => {
       // An error happened.

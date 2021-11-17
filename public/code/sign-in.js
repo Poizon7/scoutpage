@@ -61,6 +61,7 @@ onAuthStateChanged(auth, async (user) => {
     // https://firebase.google.com/docs/reference/js/firebase.User
     const uid = user.uid;
 
+    // Problem
     window.open("./scout.html", "_self");
 
     // ...

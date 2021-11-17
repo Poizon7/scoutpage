@@ -11,14 +11,18 @@
       rel="stylesheet"
     />
     <link rel="icon" type="image/x-icon" href="img/Scoutsymbolen_rgb.png" />
+    <script type="module" src="code/account.js" defer></script>
     <script type="module" src="code/calender.js" defer></script>
+    <script type="module" src="code/chat.js" defer></script>
     <script type="module" src="code/footer.js" defer></script>
   </head>
   <body>
     <header>
       <nav>
         <img src="img/menu.png" alt="Menu" />
-        <a href="sign-in.html"><h4>Logga in</h4></a>
+        <div id="login">
+          <a href="sign-in.html"><h4>Logga in</h4></a>
+        </div>
       </nav>
       <a href="index.html">
         <div id="logga">
@@ -30,6 +34,19 @@
     <main id="scout-main">
       <div class="calender">
         <h1>Kalender</h1>
+      </div>
+      <div class="chat">
+        <h1>Chatt</h1>
+        <div id="chat">
+          <!-- messages will display here -->
+          <ul id="messages"></ul>
+
+          <!-- form to send message -->
+          <form id="message-form">
+            <input id="message-input" type="text" />
+            <button id="message-btn" type="submit">Send</button>
+          </form>
+        </div>
       </div>
     </main>
     <footer>
