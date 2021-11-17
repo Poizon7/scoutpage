@@ -206,6 +206,13 @@ fieldset {
   margin: 10px;
 }
 
+.calender-entry input {
+  border: 0;
+  background-color: inherit;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5em;
+}
+
 .calender-entry-button {
   display: flex;
   align-items: center;
@@ -233,6 +240,7 @@ fieldset {
   padding: 20px;
 
   display: flex;
+  flex-direction: column;
 }
 
 .calender-entry-block h2 {
@@ -244,15 +252,8 @@ fieldset {
   padding: 10px;
 }
 
-.calender-ideas {
-  width: 50%;
-}
-
-.calender-extra {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.calender-description {
+  width: 100%;
 }
 
 .badge {
