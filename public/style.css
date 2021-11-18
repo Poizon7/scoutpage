@@ -9,7 +9,6 @@
 }
 
 body {
-  margin: 0px;
   min-height: 100vh;
 
   display: flex;
@@ -51,6 +50,7 @@ nav > img {
 #login {
   display: flex;
   flex-direction: row-reverse;
+  gap: 20px;
 }
 
 footer {
@@ -163,6 +163,12 @@ h6 {
   flex-direction: row-reverse;
 }
 
+@media (max-width: 500px) {
+  #main-page article {
+    flex-direction: column;
+  }
+}
+
 /* Sign in specific styles */
 
 .sign-in-main {
@@ -201,6 +207,20 @@ fieldset {
 #scout-main {
   display: flex;
   justify-content: space-around;
+}
+
+@media (max-width: 500px) {
+  #scout-main {
+    flex-direction: column;
+  }
+
+  .calender {
+    width: 100%;
+  }
+
+  .chat {
+    width: 100%;
+  }
 }
 
 .calender {
@@ -336,17 +356,22 @@ fieldset {
 #chat li {
   list-style-type: none;
   margin-bottom: 10px;
-  background-color: #6929ca;
+  background-color: #cee3f0;
   padding: 5px;
   border-radius: 10px;
-  color: white;
-  width: 50%;
+  color: #000000;
+  width: 70%;
+
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
 #chat li span {
+  font-family: "Open Sans", sans-serif;
   font-style: italic;
   font-weight: bolder;
-  color: #b5b0b9;
+  color: #000000;
 }
 
 #chat {
@@ -357,7 +382,7 @@ fieldset {
 #message-form {
   text-align: center;
   width: 100%;
-  background-color: #b7b5b9;
+  background-color: #cee3f0;
 }
 
 #chat input {
@@ -370,13 +395,11 @@ fieldset {
   height: 38px;
 }
 
-.sent {
-  text-align: right;
-  background-color: #a79cb3;
-  margin-left: 50%;
+#chat .sent {
+  background-color: #609ac4;
+  margin-left: 30%;
 }
 
-.sent span {
-  margin-left: 5px;
-  color: #6929ca;
+#chat .sent span {
+  display: none;
 }

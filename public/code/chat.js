@@ -69,9 +69,9 @@ onAuthStateChanged(auth, async (user) => {
           user.email == doc.data().user ? "sent" : "receive"
         }><span>${doc
           .data()
-          .user.slice(0, doc.data().user.indexOf("@"))}: </span>${
+          .user.slice(0, doc.data().user.indexOf("@"))} </span> <p>${
           doc.data().message
-        }</li>`;
+        } </p></li>`;
       });
 
       messages.innerHTML = items.join("");
